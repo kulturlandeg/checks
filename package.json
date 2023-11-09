@@ -1,0 +1,22 @@
+{
+  "name": "kulturland-homepage-checks",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@unlighthouse/cli": "^0.10.0",
+    "bun-types": "latest",
+    "puppeteer": "^21.5.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "homepage:check": "unlighthouse-ci --site https://www.kulturland.de",
+    "homepage:build:report": "bun homepage:check --build-static",
+    "postinstall": "bun x @puppeteer/browsers install chrome@stable --path $HOME/.cache/puppeteer",
+    "postinstall:comment": "https://github.com/oven-sh/bun/issues/4705#issuecomment-1712545662"
+  },
+  "trustedDependencies": [
+    "puppeteer"
+  ]
+}
