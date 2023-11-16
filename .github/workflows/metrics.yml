@@ -1,4 +1,4 @@
-name: checks
+name: metrics
 
 on:
   workflow_dispatch:
